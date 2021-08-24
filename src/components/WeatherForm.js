@@ -1,9 +1,10 @@
 import { connect } from "react-redux"
-import { updateCity } from "../actions"
+import { updateCity, getWeather } from "../actions"
 
 const WeatherForm = (props) => {
     return (<div>
         <input type="text" value={props.city} onChange={(e) => props.updateCity(e.target.value)} />
+        <button onClick={() => props.getWeather(props.city)}>Submit</button>
     </div>)
 }
 
@@ -13,4 +14,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { updateCity })(WeatherForm);
+export default connect(mapStateToProps, { updateCity, getWeather })(WeatherForm);

@@ -1,7 +1,8 @@
-import { combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore } from "redux";
 import { userReducer } from "./user.reducer";
 import { weatherFormReducer } from "./weather-form.reducer";
 import { weatherInfoReducer } from "./weather-info.reducer";
+import thunk from 'redux-thunk';
 
 const reducer = combineReducers({
     form: weatherFormReducer, // {prop: values}
@@ -9,4 +10,4 @@ const reducer = combineReducers({
     user: userReducer
 })
 
-export const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+export const store = createStore(reducer, applyMiddleware(thunk));
