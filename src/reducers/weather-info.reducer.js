@@ -1,7 +1,7 @@
 const initialState = {
     description: '',
     temp: 0,
-    hasWeather: false
+    hasWeather: true
 }
 
 export const weatherInfoReducer = (state = initialState, action) => {
