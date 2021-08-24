@@ -1,4 +1,4 @@
-import { GET_WEATHER } from "../actions";
+import { GET_WEATHER, GOT_WEATHER } from "../actions";
 
 const initialState = {
     description: '',
@@ -8,8 +8,9 @@ const initialState = {
 
 export const weatherInfoReducer = (state = initialState, action) => {
     switch(action.type) {
-        case GET_WEATHER:
-            return {...state, hasWeather: true}
+        case GOT_WEATHER:
+            console.log(action);
+            return {...state, hasWeather: true, temp: action.temp, description: action.description}
         default:
             return state;
     }

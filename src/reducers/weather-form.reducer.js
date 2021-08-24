@@ -1,7 +1,7 @@
 import { UPDATE_CITY } from "../actions";
 
 const initialState = {
-    city: 'something'
+    city: ''
 }
 
 export const weatherFormReducer = (state = initialState, action) => {
